@@ -31,6 +31,9 @@ public class Move : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.D))
         {
+            int health = animator.GetInteger("Health") - 10;
+            animator.SetInteger("Health", health) ;
+            print("Health: " + health.ToString());
             transform.Translate(moveSpeed * Time.deltaTime, 0, 0); 
         }
         if (Input.GetKeyDown(KeyCode.Q))
